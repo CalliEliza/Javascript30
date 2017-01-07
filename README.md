@@ -1,2 +1,2 @@
 # Javascript30
-30 days of JavaScript projects based on this tutorial: https://javascript30.com/
+30 days of JavaScript projects based on this tutorial: https://javascript30.com/ written by @wesbos.
