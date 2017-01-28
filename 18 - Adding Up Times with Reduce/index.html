@@ -182,6 +182,31 @@
     </li>
   </ul>
 <script>
+
+const timeNodes = document.querySelectorAll('[data-time]');
+// convert from node list to an array
+const timeNodesArr = Array.from(timeNodes);
+// array of list items --> an array of strings
+const seconds = timeNodesArr
+.map(node => node.dataset.time)
+.map(timeCode => {
+  const [mins, secs] = timeCode.split(':').map(parseFloat); //turns strings into int
+  return (mins* 60) + secs;
+  //console.log(mins, secs);
+})
+  .reduce((total, vidSeconds) => {
+    return total + vidSeconds;
+  });  //turn into seconds
+
+  let secondsLeft = seconds;
+  const hours = Math.floor(secondsLeft / 3600);
+  secondsLeft = secondsLeft % 3600;
+
+  const mins = Math.floor(secondsLeft / 60);
+  secondsLeft = secondsLeft % 60;
+
+  console.log(hours, mins, secondsLeft);
+
 </script>
 </body>
 </html>
