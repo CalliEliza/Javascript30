@@ -96,6 +96,15 @@ function greenScreen(pixels) {
   }
 }
 
+function black&White(pixels) {
+  for (let i =0;i<pixels.data.length;i+=4) {
+    pixels[i+0] = pixels.data[i+0] + 50;//red
+    pixels[i+1] = pixels.data[i+1] + 100;//green
+    pixels[i+2] = pixels.data[i+2] + 25;//blue
+  }
+  return pixels;
+}
+
 getVideo();
 
 video.addEventListener('canplay', paintToCanvas);
