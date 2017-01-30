@@ -10,6 +10,22 @@ html {
   font-size: 10px;
   background:#ffc600;
 }
+/* button to get picture*/
+.clickBtn {
+  border: none;
+  background-color: #979186;
+  color: #E0E1DD;
+  margin: .25em;
+  padding: 1em;
+}
+
+.clickBtn:hover {
+  border: none;
+  background-color: #e0e1dd;
+  color: #979186;
+  margin: .25em;
+  padding: 1em;
+}
 
 .photobooth {
   background:white;
