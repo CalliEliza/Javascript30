@@ -35,6 +35,20 @@
   const options = document.querySelectorAll('[type="range"], [name="text"]');
   const speakButton = document.querySelector('#speak');
   const stopButton = document.querySelector('#stop');
+
+  msg.txt = document.querySelector('[name="text"]').value;
+
+  function populateVoices() {
+    voices = this.getVoices();
+    //console.log(voices);
+    const voicesOptions = voices
+      .map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`)
+      .join('');
+      voicesDropdown.innerHTML = voicesOptions;
+  }
+
+  speechSynthesis.addEventListener('voiceschanged', populateVoices);
+
 </script>
 
 </body>
