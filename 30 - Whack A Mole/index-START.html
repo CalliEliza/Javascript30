@@ -38,6 +38,7 @@
   const moles = document.querySelectorAll('.mole');
   let lastHole;
   let timeUP = false;
+    let score = 0;
 
 function randTime(min, max) {
   return Math.round(Math.random() * (max-min) + min);
@@ -54,7 +55,7 @@ function randomHole(holes) {
 }
 
 function peep() {
-  const time = randTime(200,1000);
+  const time = randTime(200,1000); //decrease time to increase difficultu
   const hole = randomHole(holes);
   hole.classList.add('up');
   setTimeout(() => {
@@ -66,12 +67,16 @@ function peep() {
 function startGame() {
   scoreBoard.textContent = 0;
   timeUp = false;
+  score = 0;
   peep();
   setTimeout(() =>  timeUp = true, 10000);
 }
 
 function bonk(e) {
-
+  if(!e.isTrusted) return; //not real click
+  score++;
+  this.classList.remove('up');
+  scoreBoard.textContent = score;
 }
 
 moles.forEach(mole => mole.addEventListener('click', bonk));
