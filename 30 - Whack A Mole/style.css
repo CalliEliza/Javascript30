@@ -67,3 +67,11 @@ h1 {
 .hole.up .mole {
   top:0;
 }
+
+button {
+  padding: 2em;
+  background-color: #5C0DAC;
+  border: none;
+  color: #8A55C1;
+  margin-left: 1em; 
+}
