@@ -72,6 +72,14 @@ button {
   padding: 2em;
   background-color: #5C0DAC;
   border: none;
-  color: #8A55C1;
+  color: #eaedc3;
+  margin-left: 1em; 
+}
+
+button:hover {
+  padding: 2em;
+  background-color: #9B7900;
+  border:2px solid #5C0DAC;
+  color: #eaedc3;
   margin-left: 1em; 
 }
